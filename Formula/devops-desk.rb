@@ -1,9 +1,9 @@
-class DeopssDesk < Formula
+class DevopsDesk < Formula
   desc "Terminal-based DevOps control center — unified AWS, EKS, K8s, Flux, Helm, Terraform, OCI, GitHub"
   homepage "https://github.com/afeldman/devops-desk"
   version "0.1.0"
   url "https://github.com/afeldman/devops-desk/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "PLACEHOLDER_SHA256"
+  sha256 "8456181d460f1cd57e6a8bf44dc3163ca2fc7047367e114293f3dc0c946e2b5d"
 
   SKIP = %w[install.sh release.sh CLAUDE.md README.md Makefile test-bundle.sh .github].freeze
 

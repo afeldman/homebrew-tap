@@ -2,10 +2,15 @@
 
 Dieses Repository ist der Homebrew Tap fuer eigene CLI-Tools.
 
-Wichtig: Aktuell werden hier Casks veroeffentlicht (unter `Casks/`), keine Formulae (unter `Formula/`).
+**Hinweis:** Enthaelt sowohl Formulae (unter `Formula/`) als auch Casks (unter `Casks/`).
 
 ## Enthaltene Pakete
 
+### Formulae (Bash/Shell Tools)
+- `scripts` — personal utility scripts (encryption, certs, git, dev tools)
+- `devops-desk` — terminal-based DevOps control center
+
+### Casks
 - batch-cost
 - cloudlogin
 - gofish
@@ -23,15 +28,17 @@ brew tap afeldman/tap
 
 ### 2) Tool installieren
 
-Explizit ueber den Tap:
+**Formulae (ohne --cask):**
+
+```bash
+brew install afeldman/tap/scripts
+brew install afeldman/tap/devops-desk
+```
+
+**Casks (mit --cask):**
 
 ```bash
 brew install --cask afeldman/tap/cloudlogin
-```
-
-Weitere Beispiele:
-
-```bash
 brew install --cask afeldman/tap/project-check
 brew install --cask afeldman/tap/batch-cost
 brew install --cask afeldman/tap/shred
@@ -43,45 +50,17 @@ brew install --cask afeldman/tap/goshellcheck
 
 ```bash
 brew update
+brew upgrade afeldman/tap/scripts
+brew upgrade afeldman/tap/devops-desk
 brew upgrade --cask afeldman/tap/cloudlogin
 ```
 
 ### 4) Deinstallation
 
 ```bash
+brew uninstall afeldman/tap/scripts
+brew uninstall afeldman/tap/devops-desk
 brew uninstall --cask afeldman/tap/cloudlogin
-```
-
-## Nutzung mit Zerobrew
-
-Zerobrew ist Homebrew-kompatibel fuer schnelle Formula-Installationen, aber dieser Tap liefert derzeit Casks.
-
-Das bedeutet:
-
-- Tools aus diesem Tap bitte mit Homebrew installieren (`brew install --cask ...`).
-- Zerobrew kannst du parallel fuer normale Formulae nutzen.
-
-Beispiel gemischter Workflow:
-
-```bash
-# Casks aus diesem Tap
-brew tap afeldman/tap
-brew install --cask afeldman/tap/cloudlogin
-
-# Schnelle Formula-Installation mit Zerobrew
-zb install ripgrep fd bat
-```
-
-Updates im Mix:
-
-```bash
-# Homebrew Casks (dieser Tap)
-brew update
-brew upgrade --cask
-
-# Zerobrew Formulae
-zb update
-zb install <formula>
 ```
 
 ## Troubleshooting
@@ -96,10 +75,11 @@ brew tap afeldman/tap
 ### Version pruefen
 
 ```bash
-brew info --cask afeldman/tap/cloudlogin
-cloudlogin --version
+brew info afeldman/tap/devops-desk
+devops-desk --help
 ```
 
 ## Hinweis fuer Releases
 
-Die Cask-Dateien werden automatisiert erzeugt (GoReleaser) und sollten nicht manuell editiert werden.
+- **Formulae:** Werden aus GitHub Tags geladen (z.B. `v0.1.0`). SHA256 muss in der .rb-Datei aktualisiert werden.
+- **Casks:** Werden automatisiert erzeugt (GoReleaser) und sollten nicht manuell editiert werden.
