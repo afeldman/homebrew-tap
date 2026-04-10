@@ -9,6 +9,7 @@ Wichtig: Aktuell werden hier Casks veroeffentlicht (unter `Casks/`), keine Formu
 - batch-cost
 - cloudlogin
 - gofish
+- goshellcheck
 - project-check
 - shred
 
@@ -35,6 +36,7 @@ brew install --cask afeldman/tap/project-check
 brew install --cask afeldman/tap/batch-cost
 brew install --cask afeldman/tap/shred
 brew install --cask afeldman/tap/gofish
+brew install --cask afeldman/tap/goshellcheck
 ```
 
 ### 3) Upgrades
