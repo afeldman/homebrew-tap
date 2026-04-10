@@ -5,22 +5,22 @@ cask "cpctl" do
   on_macos do
     on_intel do
       url "https://github.com/afeldman/cloud-playground/releases/download/v#{version}/cpctl_#{version}_darwin_amd64.tar.gz"
-      sha256 "a342aca9cb8a93350c7e451162a59c4c972f9c01c53f832b4d5cad6fd831fde2"
+      sha256 "d5366a2d73c82611918075cdb95e821353259332edc9211dff13f82fc9a060d0"
     end
     on_arm do
       url "https://github.com/afeldman/cloud-playground/releases/download/v#{version}/cpctl_#{version}_darwin_arm64.tar.gz"
-      sha256 "c6ca01a7e84157dcd6732488f836aebbf71b73b77f9496a9b08b0348af099ea5"
+      sha256 "5f6ce108e63a935874382ec0fc7f66e1582e1fd1481017fc2ddf6de9db505bc2"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/afeldman/cloud-playground/releases/download/v#{version}/cpctl_#{version}_linux_amd64.tar.gz"
-      sha256 "a5cb2a6e511fbd6ad45671793b47ffb561f91c93f21d81dcba0bad303a6d25e9"
+      sha256 "0df110e26e99d1f5032ec3f43bc1090d9ae060e5d201d3e87a56ac05901b0f4a"
     end
     on_arm do
       url "https://github.com/afeldman/cloud-playground/releases/download/v#{version}/cpctl_#{version}_linux_arm64.tar.gz"
-      sha256 "ce3db5f930be5dd411ff4bd6befb175b88b438b5a5de9342a971bb5469aeae83"
+      sha256 "844acdf0667af829c9695675b4f39e76e82d31ff77c4f306be67e12cd36a1998"
     end
   end
 
