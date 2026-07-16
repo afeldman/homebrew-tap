@@ -5,13 +5,21 @@
 class Kairos < Formula
   desc "Git Context Engine — understands project history to generate high-quality commit messages, tags, and changelogs using LLMs"
   homepage "https://github.com/afeldman/kairos"
-  version "0.3.0"
+  version "0.4.6"
   license "Apache-2.0"
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/afeldman/kairos/releases/download/v0.4.6/kairos_0.4.6_macOS_x86_64.tar.gz"
+      sha256 "317ade88ce920488fd4c38fc88a02060f2c880858cb4946b9e786d57a06036cf"
+
+      define_method(:install) do
+        bin.install "kairos"
+      end
+    end
     if Hardware::CPU.arm?
-      url "https://github.com/afeldman/kairos/releases/download/v0.3.0/kairos_0.3.0_macOS_arm64.tar.gz"
-      sha256 "fbf43158f469fe062d170020f2c5a6e9f29f2b331c3be00831d86496ad787c33"
+      url "https://github.com/afeldman/kairos/releases/download/v0.4.6/kairos_0.4.6_macOS_arm64.tar.gz"
+      sha256 "1e40a4840962125f72f93b52a2b7662193f803237043af21539f2306d2dfb099"
 
       define_method(:install) do
         bin.install "kairos"
@@ -21,8 +29,15 @@ class Kairos < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/afeldman/kairos/releases/download/v0.3.0/kairos_0.3.0_Linux_x86_64.tar.gz"
-      sha256 "3a01358674b1326830bfab0fb50c24c782b702c88b73dce2ad5359fc40d9ffc6"
+      url "https://github.com/afeldman/kairos/releases/download/v0.4.6/kairos_0.4.6_Linux_x86_64.tar.gz"
+      sha256 "18ce9f4c11c455f6649d2243233733e22e82d687c7de016e41fefe264b1ff598"
+      define_method(:install) do
+        bin.install "kairos"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/afeldman/kairos/releases/download/v0.4.6/kairos_0.4.6_Linux_arm64.tar.gz"
+      sha256 "da0754b15ac28fbfbcaa4d098adc097acec2e2ceb44264dd3f991a80e4029916"
       define_method(:install) do
         bin.install "kairos"
       end
@@ -30,6 +45,6 @@ class Kairos < Formula
   end
 
   test do
-    system "#{bin}/kairos", "--help"
+    system "#{bin}/kairos", "--version"
   end
 end
