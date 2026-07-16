@@ -5,13 +5,13 @@
 class Kairos < Formula
   desc "Git Context Engine — understands project history to generate high-quality commit messages, tags, and changelogs using LLMs"
   homepage "https://github.com/afeldman/kairos"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/afeldman/kairos/releases/download/v0.2.0/kairos_0.2.0_macOS_arm64.tar.gz"
-      sha256 "9b63c1c03748ab0ca01cc70f2b6573572e2eab7216189dfd7d242e987b8f75ce"
+      url "https://github.com/afeldman/kairos/releases/download/v0.3.0/kairos_0.3.0_macOS_arm64.tar.gz"
+      sha256 "fbf43158f469fe062d170020f2c5a6e9f29f2b331c3be00831d86496ad787c33"
 
       define_method(:install) do
         bin.install "kairos"
@@ -21,8 +21,8 @@ class Kairos < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/afeldman/kairos/releases/download/v0.2.0/kairos_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "48c136099c556b1b7163e041bb0199a1df82f8515ed3082070eaa7c749320c25"
+      url "https://github.com/afeldman/kairos/releases/download/v0.3.0/kairos_0.3.0_Linux_x86_64.tar.gz"
+      sha256 "3a01358674b1326830bfab0fb50c24c782b702c88b73dce2ad5359fc40d9ffc6"
       define_method(:install) do
         bin.install "kairos"
       end
