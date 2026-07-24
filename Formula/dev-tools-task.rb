@@ -5,8 +5,6 @@ class DevToolsTask < Formula
   sha256 "844bf23c404ddc24eff4d3932c1a62998cfd090118d309a2cd1523b3f1dffa77"
   version "0.2.0"
 
-  depends_on "go-task"
-
   def install
     pkgshare.install "tasks", "Taskfile.yml"
     (pkgshare/"scripts/lib").install Dir["scripts/lib/*.sh"]
@@ -20,6 +18,16 @@ class DevToolsTask < Formula
     end
 
     bin.install "bin/dev-tools-task"
+  end
+
+  def caveats
+    <<~EOS
+      Requires go-task (the `task` binary) to actually run the library:
+        brew install go-task
+      Then, inside a project:
+        dev-tools-task
+        task devtools:<task>
+    EOS
   end
 
   test do
