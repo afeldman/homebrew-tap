@@ -3,7 +3,6 @@ class DevToolsTask < Formula
   homepage "https://github.com/afeldman/dev-tools-task"
   url "https://github.com/afeldman/dev-tools-task/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "c677a1cf7acfab38e16696893e909d5c57b165d703aed25906f7af58158584de"
-  version "0.2.1"
 
   def install
     pkgshare.install "tasks", "Taskfile.yml"

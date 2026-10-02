@@ -5,7 +5,6 @@
 class Kairos < Formula
   desc "Git Context Engine — understands project history to generate high-quality commit messages, tags, and changelogs using LLMs"
   homepage "https://github.com/afeldman/kairos"
-  version "0.4.6"
   license "Apache-2.0"
 
   on_macos do
