@@ -10,6 +10,7 @@ Dieses Repository ist der Homebrew Tap fuer eigene CLI-Tools.
 - `scripts` — personal utility scripts (encryption, certs, git, dev tools)
 - `devops-desk` — terminal-based DevOps control center
 - `dev-tools-task` — modular Task (go-task) library of dev-ops helpers (AWS, K8s, Helm, Terraform, SQL, SSH, Git, Security, Diagnostics)
+- `auditeur` — Local Evidence-Driven Software Auditor
 
 ### Casks
 - batch-cost
@@ -35,6 +36,7 @@ brew tap afeldman/tap
 brew install afeldman/tap/scripts
 brew install afeldman/tap/devops-desk
 brew install afeldman/tap/dev-tools-task
+brew install afeldman/tap/auditeur
 ```
 
 **Casks (mit --cask):**
